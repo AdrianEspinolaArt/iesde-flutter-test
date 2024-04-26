@@ -25,10 +25,7 @@ class CatalogModel {
 
   Item getByPosition(int position) {
     return getById(position);
-    
   }
-
-  void updateQuantity(int itemId, int newQuantity) {}
 }
 
 @immutable
@@ -43,8 +40,6 @@ class Item {
 
   @override
   int get hashCode => id;
-
-  get quantity => null;
 
   @override
   bool operator ==(Object other) => other is Item && other.id == id;

@@ -9,6 +9,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+<<<<<<< HEAD
   bloc:
     dependency: "direct main"
     description:
@@ -17,6 +18,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.4"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   boolean_selector:
     dependency: transitive
     description:
@@ -70,6 +73,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -78,6 +82,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.5"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -91,6 +97,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -104,6 +111,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "13.2.4"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   leak_tracker:
     dependency: transitive
     description:
@@ -136,6 +145,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+<<<<<<< HEAD
   logging:
     dependency: transitive
     description:
@@ -144,6 +154,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   matcher:
     dependency: transitive
     description:
@@ -168,6 +180,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
+<<<<<<< HEAD
   nested:
     dependency: transitive
     description:
@@ -176,6 +189,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   path:
     dependency: transitive
     description:
@@ -184,6 +199,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+<<<<<<< HEAD
   provider:
     dependency: "direct main"
     description:
@@ -192,6 +208,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
+=======
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d
   sky_engine:
     dependency: transitive
     description: flutter
@@ -262,5 +280,9 @@ packages:
     source: hosted
     version: "13.0.0"
 sdks:
+<<<<<<< HEAD
   dart: ">=3.3.3 <4.0.0"
   flutter: ">=3.16.0"
+=======
+  dart: ">=3.3.4 <4.0.0"
+>>>>>>> fa67f7bcd7d2b6e9745ec3ad328449c89c0fda1d

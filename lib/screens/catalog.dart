@@ -23,7 +23,7 @@ class CatalogPage extends StatelessWidget {
               child: Text('Erro ao carregar o catálogo: ${state.message}'),
             );
           } else {
-            return Center(child: Text('Estado de catálogo desconhecido'));
+            return const Center(child: Text('Estado de catálogo desconhecido'));
           }
         },
       ),
@@ -31,16 +31,22 @@ class CatalogPage extends StatelessWidget {
   }
 
 Widget _buildProductList(CatalogModel catalog) {
-  return ListView.builder(
+  return GridView.builder(
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2, // Dois produtos por linha
+      crossAxisSpacing: 8.0, // Espaçamento horizontal entre os produtos
+      mainAxisSpacing: 8.0, // Espaçamento vertical entre os produtos
+      childAspectRatio: 0.7, // Proporção entre largura e altura dos produtos
+    ),
     itemCount: catalog.length,
     itemBuilder: (context, index) {
       final item = catalog.getByPosition(index);
       return Card(
-        margin: EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(8.0),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset( // Adicionando imagem do produto
                 'assets/images/product_${item.id % 5}.png',
@@ -48,31 +54,30 @@ Widget _buildProductList(CatalogModel catalog) {
                 height: 100,
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               Text(
                 item.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 4.0),
+              const SizedBox(height: 4.0),
               Text(
                 '\$${item.price}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.green, // Exemplo de cor para o preço
                 ),
               ),
-              SizedBox(height: 4.0),
-             
-              SizedBox(height: 8.0),
+              const SizedBox(height: 4.0),
               ElevatedButton(
                 onPressed: () {
-                  GoRouter.of(context).go('/cart');
+                  // Aqui vai a rota do cart
                 },
-                child: Text('Adicionar ao Carrinho'),
+                child: const Text('Adicionar ao Carrinho'),
+                
               ),
             ],
           ),
@@ -80,4 +85,6 @@ Widget _buildProductList(CatalogModel catalog) {
       );
     },
   );
-}}
+}
+
+}
