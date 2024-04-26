@@ -1,0 +1,1 @@
+ C:\\Users\\adrian.espinola\\Documents\\Diretorios\\teste_flutter\\iesde-flutter-test\\.dart_tool\\flutter_build\\4108cff99f778dd23d830102de9dc550\\native_assets.yaml: 
