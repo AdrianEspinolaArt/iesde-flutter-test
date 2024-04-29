@@ -28,8 +28,6 @@ class _CatalogState extends State<Catalog> {
       listener: (context, state) {
         if (state is CatalogNavToCartAction) {
           GoRouter.of(context).go('/Cart');
-        } else if (state is CatalogNavToWishlistAction) {
-          GoRouter.of(context).go('/Wishlist');
         } 
         else if (state is CatalogProductItemCartActionState){
           ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text('Item Carted'))));
@@ -52,11 +50,6 @@ class _CatalogState extends State<Catalog> {
                 backgroundColor: const Color.fromARGB(255, 143, 90, 187),
                 title: const Text('Catálogo de Produtos'),
                 actions: [
-                  IconButton(
-                      onPressed: () {
-                        catalogBloc.add(CatalogWishlistNavEvent());
-                      },
-                      icon: const Icon(Icons.favorite_border)),
                   IconButton(
                       onPressed: () {
                         catalogBloc.add(CatalogCartNavEvent());

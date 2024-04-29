@@ -48,13 +48,6 @@ class CartTileWidget extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        // catalogBloc.add(CatalogWishlistButtonClickedEvent(
-                        //   clickedProduct: catalogDataModel,
-                        // ));
-                      },
-                      icon: const Icon(Icons.favorite_border)),
-                  IconButton(
-                      onPressed: () {
                         // catalogBloc.add(CatalogCartButtonClickedEvent(
                         //   clickedProduct: catalogDataModel,
                         // ));
