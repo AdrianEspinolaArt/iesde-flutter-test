@@ -10,6 +10,5 @@ class CartRemoveItemEvent extends CartEvent {
 
   CartRemoveItemEvent(this.itemToRemove);
 
-  @override
   List<Object> get props => [itemToRemove];
 }
