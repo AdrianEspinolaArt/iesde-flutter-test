@@ -22,7 +22,7 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
   FutureOr<void> catalogInitialEvent(
       CatalogInitialEvent event, Emitter<CatalogState> emit) async {
     emit(CatalogLoadState());
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     emit(CatalogLoadedSuccessState(
         products: ProductsData.products
             .map((e) => CatalogDataModel(
@@ -36,26 +36,22 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
 
   FutureOr<void> catalogWishlistNavEvent(
       CatalogWishlistNavEvent event, Emitter<CatalogState> emit) {
-    print('Wishlist Navigate Clicked');
     emit(CatalogNavToWishlistAction());
   }
 
   FutureOr<void> catalogCartNavEvent(
       CatalogCartNavEvent event, Emitter<CatalogState> emit) {
-    print('Cart Navigate Clicked');
     emit(CatalogNavToCartAction());
   }
 
   FutureOr<void> catalogWishlistButtonClickedEvent(
       CatalogWishlistButtonClickedEvent event, Emitter<CatalogState> emit) {
-    print('Wishlist Product Clicked');
     wishlistItens.add(event.clickedProduct);
     emit(CatalogProductItemWishlistActionState());
   }
 
   FutureOr<void> catalogCartButtonClickedEvent(
       CatalogCartButtonClickedEvent event, Emitter<CatalogState> emit) {
-    print('Cart Product Clicked');
     cartItens.add(event.clickedProduct);
     emit(CatalogProductItemCartActionState());
   }

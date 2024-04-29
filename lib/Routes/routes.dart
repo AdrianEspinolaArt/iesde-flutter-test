@@ -14,7 +14,7 @@ final routes = GoRouter(
     ),
     GoRoute(
       path: '/catalog',
-      builder: (context, state) => Catalog(),
+      builder: (context, state) => const Catalog(),
     ),
     GoRoute(
       path: '/cart',

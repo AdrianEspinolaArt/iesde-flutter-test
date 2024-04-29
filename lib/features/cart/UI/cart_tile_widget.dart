@@ -33,7 +33,7 @@ class CartTileWidget extends StatelessWidget {
           ),
           const SizedBox(height: 20,),
           Text(catalogDataModel.name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold),
           ),
@@ -52,14 +52,14 @@ class CartTileWidget extends StatelessWidget {
                         //   clickedProduct: catalogDataModel,
                         // ));
                       },
-                      icon: Icon(Icons.favorite_border)),
+                      icon: const Icon(Icons.favorite_border)),
                   IconButton(
                       onPressed: () {
                         // catalogBloc.add(CatalogCartButtonClickedEvent(
                         //   clickedProduct: catalogDataModel,
                         // ));
                       },
-                      icon: Icon(Icons.shopping_bag_outlined)),
+                      icon: const Icon(Icons.shopping_bag_outlined)),
                 ],
               )
             ],

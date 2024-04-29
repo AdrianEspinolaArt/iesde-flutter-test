@@ -28,7 +28,7 @@ class Cart extends StatefulWidget {
             onPressed: (){
               GoRouter.of(context).go('/Catalog');
             }, 
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
         ],
         
       ),
