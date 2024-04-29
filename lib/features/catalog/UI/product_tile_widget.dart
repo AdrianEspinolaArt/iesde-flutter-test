@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:processo_selecao_iesde/features/catalog/bloc/catalog_bloc.dart';
 import 'package:processo_selecao_iesde/features/catalog/model/catalog_model.dart';
@@ -20,7 +19,7 @@ class ProductTileWidget extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
         borderRadius: BorderRadius.circular(10),
@@ -53,7 +52,7 @@ class ProductTileWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("\$" + catalogDataModel.price.toString()),
+              Text("\$${catalogDataModel.price}"),
               
               Row(
                 children: [

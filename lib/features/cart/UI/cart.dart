@@ -39,7 +39,7 @@ class Cart extends StatefulWidget {
         buildWhen: (previous, current) => current is !CartActionState,
         builder: (context, state) {
           switch (state.runtimeType) {
-            case CartSuccessState:
+            case const (CartSuccessState):
             final successState = state as CartSuccessState;
             return ListView.builder(
                 itemCount: successState.cartItens.length,

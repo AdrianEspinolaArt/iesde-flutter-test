@@ -20,7 +20,7 @@ Widget build(BuildContext context) {
           color: Colors.grey.withOpacity(0.5),
           spreadRadius: 5,
           blurRadius: 7,
-          offset: Offset(0, 3), // changes position of shadow
+          offset: const Offset(0, 3), // changes position of shadow
         ),
       ],
       borderRadius: BorderRadius.circular(10),
@@ -40,7 +40,7 @@ Widget build(BuildContext context) {
             ),
           ),
         ),
-        SizedBox(width: 20), // Espaço entre a imagem e os detalhes descritivos
+        const SizedBox(width: 20), // Espaço entre a imagem e os detalhes descritivos
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ Widget build(BuildContext context) {
                 children: [
                   Text(
                     catalogDataModel.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -59,17 +59,17 @@ Widget build(BuildContext context) {
                             onPressed: () {
                               cartBloc.add(CartRemoveItemEvent(catalogDataModel));
                             },
-                            icon: Icon(Icons.close),
+                            icon: const Icon(Icons.close),
                                                   ),
                 ],
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(catalogDataModel.description),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("\$" + catalogDataModel.price.toString()),
+                  Text("\$${catalogDataModel.price}"),
                   Row(
                     children: [
                       _buildQuantitySelector(),
@@ -93,9 +93,9 @@ Widget _buildQuantitySelector() {
           // Reduzir a quantidade
           // Implemente sua lógica aqui
         },
-        icon: Icon(Icons.remove),
+        icon: const Icon(Icons.remove),
       ),
-      Text(
+      const Text(
         '1', // Aqui você pode colocar a quantidade inicial ou vinculá-la a um contador
         style: TextStyle(fontSize: 16),
       ),
@@ -104,7 +104,7 @@ Widget _buildQuantitySelector() {
           // Aumentar a quantidade
           // Implemente sua lógica aqui
         },
-        icon: Icon(Icons.add),
+        icon: const Icon(Icons.add),
       ),
     ],
   );

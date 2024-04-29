@@ -35,12 +35,12 @@ class _CatalogState extends State<Catalog> {
       },
       builder: (context, state) {
         switch (state.runtimeType) {
-          case CatalogloadingState:
+          case const (CatalogloadingState):
             return const Scaffold(
                 body: Center(
               child: CircularProgressIndicator(),
             ));
-          case CatalogLoadedSuccessState:
+          case const (CatalogLoadedSuccessState):
             final successState = state as CatalogLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
@@ -61,7 +61,7 @@ class _CatalogState extends State<Catalog> {
                     catalogDataModel: successState.products[index]);
               }),
             );
-          case CatalogErrorState:
+          case const (CatalogErrorState):
             return const Scaffold(body: Center(child: Text('Error')));
           default:
             return const SizedBox();
