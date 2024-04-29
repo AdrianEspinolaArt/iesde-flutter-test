@@ -43,25 +43,24 @@ class MyLogin extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Welcome',
+            'Bem Vindo',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
+          const SizedBox(height: 40,),
           TextFormField(
             decoration: const InputDecoration(
-              hintText: 'Username',
+              hintText: 'Nome de usuário',
             ),
             onChanged: (value) => username = value,
           ),
           TextFormField(
             decoration: const InputDecoration(
-              hintText: 'Password',
+              hintText: 'Senha',
             ),
             obscureText: true,
             onChanged: (value) => password = value,
           ),
-          const SizedBox(
-            height: 24,
-          ),
+          const SizedBox(height: 30,),
           ElevatedButton(
             onPressed: () {
               if (username != null && password != null) {
@@ -69,16 +68,34 @@ class MyLogin extends StatelessWidget {
                   LoginEvent(username!, password!),
                 );
               } else {
-                // Trate o caso em que username ou password é null
+                _exibirErroLoginDialog(context);
               }
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.yellow,
-            ),
-            child: const Text('ENTER'),
+            child: const Text('ENTRAR'),
           ),
         ],
       ),
     );
   }
+
+  void _exibirErroLoginDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Erro'),
+        content: const Text('Por favor, insira um nome de usuário e uma senha válidos.'),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
 }

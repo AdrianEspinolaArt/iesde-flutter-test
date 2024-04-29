@@ -9,13 +9,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   }
 
   void _mapLoginEventToState(LoginEvent event, Emitter<AuthenticationState> emit) async {
-    // Emitir um estado de carregamento
     emit(AuthLoading());
-
-    // Simular um atraso antes de emitir o estado autenticado
-    await Future.delayed(const Duration(seconds: 1));
-
-    // Emitir um estado de autenticação bem-sucedida após o atraso
+    await Future.delayed(const Duration(seconds: 0));
     emit(AuthAuthenticated());
   }
 }
