@@ -12,4 +12,4 @@ class CartSuccessState extends CartState {
   CartSuccessState({
     required this.cartItens,
     });
-}
+} 

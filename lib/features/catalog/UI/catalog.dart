@@ -44,7 +44,6 @@ class _CatalogState extends State<Catalog> {
             final successState = state as CatalogLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: const Color.fromARGB(255, 143, 90, 187),
                 title: const Text('Catálogo de Produtos'),
                 actions: [
                   IconButton(
