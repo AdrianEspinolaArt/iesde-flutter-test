@@ -34,6 +34,5 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
 FutureOr<void> catalogCartButtonClickedEvent(
     CatalogCartButtonClickedEvent event, Emitter<CatalogState> emit) {
   cartItens.add(event.clickedProduct);
-  emit(CatalogProductItemCartActionState(cartItens: cartItens));
 }
 }
