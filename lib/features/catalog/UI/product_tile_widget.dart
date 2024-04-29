@@ -62,7 +62,6 @@ class ProductTileWidget extends StatelessWidget {
               
               Row(
                 children: [
-                  if (catalogBloc.state is CatalogItemQuantityActionState)
                   const QuantitySelector(),
                   IconButton(
                       onPressed: () {
