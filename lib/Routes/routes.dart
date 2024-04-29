@@ -2,7 +2,6 @@ import 'package:go_router/go_router.dart';
 import 'package:processo_selecao_iesde/features/cart/UI/cart.dart';
 import 'package:processo_selecao_iesde/features/catalog/UI/catalog.dart';
 import 'package:processo_selecao_iesde/features/home/UI/login.dart';
-import 'package:processo_selecao_iesde/features/wishlist/UI/wishlist.dart';
 
 // GoRouter configuration
 final routes = GoRouter(
@@ -19,10 +18,6 @@ final routes = GoRouter(
     GoRoute(
       path: '/cart',
       builder: (context, state) => const Cart(),
-    ),
-    GoRoute(
-      path: '/wishlist',
-      builder: (context, state) => const Wishlist(),
     ),
   ],
 );
