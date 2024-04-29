@@ -32,9 +32,6 @@ class _CatalogState extends State<Catalog> {
         else if (state is CatalogProductItemCartActionState){
           ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text('Item Carted'))));
         }
-        else if (state is CatalogProductItemWishlistActionState){
-          ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text('Item wishlisted'))));
-        }
       },
       builder: (context, state) {
         switch (state.runtimeType) {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:processo_selecao_iesde/features/home/bloc/authentication_bloc.dart';
+import 'package:processo_selecao_iesde/features/home/bloc/login_bloc.dart';
+
 
 class MyLogin extends StatelessWidget {
   const MyLogin({Key? key});

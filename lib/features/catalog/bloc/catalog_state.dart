@@ -22,10 +22,6 @@ class CatalogLoadedSuccessState extends CatalogState{
 
 class CatalogErrorState extends CatalogState{}
 
-class CatalogNavToWishlistAction extends CatalogActionState{}
-
 class CatalogNavToCartAction extends CatalogActionState{}
-
-class CatalogProductItemWishlistActionState extends CatalogActionState{}
 
 class CatalogProductItemCartActionState extends CatalogActionState{}
