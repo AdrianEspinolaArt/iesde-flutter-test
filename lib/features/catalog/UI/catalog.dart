@@ -61,7 +61,7 @@ class _CatalogState extends State<Catalog> {
                     catalogDataModel: successState.products[index]);
               }),
             );
-          case const (CatalogErrorState):
+          case const (CatalogError):
             return const Scaffold(body: Center(child: Text('Error')));
           default:
             return const SizedBox();

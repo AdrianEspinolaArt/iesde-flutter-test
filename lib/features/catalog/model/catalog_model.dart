@@ -16,3 +16,15 @@ class CatalogDataModel {
       required this.quantity,
     });
 }
+extension CatalogDataModelExtension on CatalogDataModel {
+  CatalogDataModel copyWith({String? id, String? name, String? description, double? price, String? image, int? quantity}) {
+    return CatalogDataModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      description: description ?? this.description,
+      price: price ?? this.price,
+      image: image ?? this.image,
+      quantity: quantity ?? this.quantity,
+    );
+  }
+}

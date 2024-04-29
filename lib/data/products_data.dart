@@ -8,7 +8,7 @@ class ProductsData {
         description: 'Fresh Washington State apples',
         price: 1.99,
         image: 'product_0.png',
-        quantity: 1),
+        quantity: 4),
     CatalogDataModel(
         id: '002',
       name: 'Avocado',
