@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:processo_selecao_iesde/common/components.dart';
 import 'package:processo_selecao_iesde/features/cart/bloc/bloc/cart_bloc.dart';
 import 'package:processo_selecao_iesde/features/catalog/model/catalog_model.dart';
 
@@ -70,9 +70,9 @@ Widget build(BuildContext context) {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("\$${catalogDataModel.price}"),
-                  Row(
+                  const Row(
                     children: [
-                      _buildQuantitySelector(),
+                      QuantitySelector(),
                     ],
                   ),
                 ],
@@ -82,31 +82,6 @@ Widget build(BuildContext context) {
         ),
       ],
     ),
-  );
-}
-
-Widget _buildQuantitySelector() {
-  return Row(
-    children: [
-      IconButton(
-        onPressed: () {
-          // Reduzir a quantidade
-          // Implemente sua lógica aqui
-        },
-        icon: const Icon(Icons.remove),
-      ),
-      const Text(
-        '1', // Aqui você pode colocar a quantidade inicial ou vinculá-la a um contador
-        style: TextStyle(fontSize: 16),
-      ),
-      IconButton(
-        onPressed: () {
-          // Aumentar a quantidade
-          // Implemente sua lógica aqui
-        },
-        icon: const Icon(Icons.add),
-      ),
-    ],
   );
 }
 

@@ -1,6 +1,6 @@
 part of 'cart_bloc.dart';
 
-@immutable
+
 abstract class CartState {}
 
 abstract class CartActionState extends CartState {}
@@ -12,4 +12,4 @@ class CartSuccessState extends CartState {
   CartSuccessState({
     required this.cartItens,
     });
-} 
+}  

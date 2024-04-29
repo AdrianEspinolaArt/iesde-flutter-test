@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:processo_selecao_iesde/common/components.dart';
 import 'package:processo_selecao_iesde/features/catalog/bloc/catalog_bloc.dart';
 import 'package:processo_selecao_iesde/features/catalog/model/catalog_model.dart';
 
 class ProductTileWidget extends StatelessWidget {
   final CatalogDataModel catalogDataModel;
-  final CatalogBloc catalogBloc; 
-  const ProductTileWidget({super.key, required this.catalogDataModel, required this.catalogBloc});
+  final CatalogBloc catalogBloc;
+
+  const ProductTileWidget({
+    Key? key,
+    required this.catalogDataModel,
+    required this.catalogBloc,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +62,8 @@ class ProductTileWidget extends StatelessWidget {
               
               Row(
                 children: [
-  
+                  if (catalogBloc.state is CatalogItemQuantityActionState)
+                  const QuantitySelector(),
                   IconButton(
                       onPressed: () {
                         catalogBloc.add(CatalogCartButtonClickedEvent(
@@ -77,4 +84,6 @@ class ProductTileWidget extends StatelessWidget {
         ),
     );
   }
+
+  
 }
