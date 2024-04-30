@@ -40,18 +40,18 @@ FutureOr<void> catalogCartButtonClickedEvent(
 }
 
 FutureOr<void> catalogAddQuantityItemToCart(
-  CatalogAddQuantityItemToCart event, Emitter<CatalogState> emit) {
-  final index = cartItens.indexWhere((item) => item.id == event.addedItem.id);
-  
-  if (index != -1) {
+    CatalogAddQuantityItemToCart event, Emitter<CatalogState> emit) {
+    final index = cartItens.indexWhere((item) => item.id == event.addedItem.id);
+
+    if (index != -1) {
     final updatedItem = cartItens[index].copyWith(quantity: cartItens[index].quantity + 1);
     cartItens[index] = updatedItem;
-  } else {
-    final newItem = event.addedItem.copyWith(quantity: 1);
-    cartItens.add(newItem);
-  }
-  
-  emit(CatalogLoadedSuccessState(products: ProductsData.products, cartItems: cartItens)); // Emitir um novo estado com a lista atualizada de produtos e itens no carrinho
+    } else {
+    cartItens.add(event.addedItem.copyWith(quantity: 1));
+    }
+
+    // Emitir um novo estado com a lista atualizada de produtos e itens no carrinho
+    emit(CatalogLoadedSuccessState(products: ProductsData.products, cartItems: cartItens));
 }
 
 FutureOr<void> catalogOffQuantityItemToCart(
