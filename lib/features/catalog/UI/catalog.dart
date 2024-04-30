@@ -9,12 +9,14 @@ class Catalog extends StatefulWidget {
 
   @override
   State<Catalog> createState() => _CatalogState();
+  
 }
 
 class _CatalogState extends State<Catalog> {
   @override
   void initState() {
     catalogBloc.add(CatalogInitialEvent());
+
     super.initState();
   }
 
