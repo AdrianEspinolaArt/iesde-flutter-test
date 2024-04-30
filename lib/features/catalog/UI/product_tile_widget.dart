@@ -66,25 +66,25 @@ class ProductTileWidget extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                      onPressed: () {
-                        catalogBloc.add(CatalogOffQuantityItemToCart(
-                          removeItem: catalogDataModel,
-                        ));
-                      },
-                      icon: const Icon(Icons.remove),
-                    ),
-                    Text(
-                      '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        catalogBloc.add(CatalogAddQuantityItemToCart(
-                          addedItem: catalogDataModel,
-                        ));
-                      },
-                      icon: const Icon(Icons.add),
-                    ),
+                        onPressed: () {
+                          catalogBloc.add(CatalogOffQuantityItemToCart(
+                            removeItem: catalogDataModel,
+                          ));
+                        },
+                        icon: const Icon(Icons.remove),
+                      ),
+                      Text(
+                        '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          catalogBloc.add(CatalogAddQuantityItemToCart(
+                            addedItem: catalogDataModel,
+                          ));
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
                     ],
                   ),
                   IconButton(

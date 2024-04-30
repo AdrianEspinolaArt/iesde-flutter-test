@@ -4,6 +4,7 @@ abstract class CartEvent {}
 
 class CartInitialEvent extends CartEvent {}
 
+
 class CartRemoveItemEvent extends CartEvent {
   final CatalogDataModel itemToRemove;
 

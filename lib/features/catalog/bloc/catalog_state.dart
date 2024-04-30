@@ -16,7 +16,7 @@ class CatalogLoadState extends CatalogState{}
 class CatalogLoadedSuccessState extends CatalogState{
   final List<CatalogDataModel> products;
   CatalogLoadedSuccessState({
-    required this.products,
+    required this.products, required List<CatalogDataModel> cartItems,
   });
 }
 
