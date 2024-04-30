@@ -9,7 +9,6 @@ class Catalog extends StatefulWidget {
 
   @override
   State<Catalog> createState() => _CatalogState();
-  
 }
 
 class _CatalogState extends State<Catalog> {
@@ -30,9 +29,9 @@ class _CatalogState extends State<Catalog> {
       listener: (context, state) {
         if (state is CatalogNavToCartAction) {
           GoRouter.of(context).go('/Cart');
-        } 
-        else if (state is CatalogProductItemCartActionState){
-          ScaffoldMessenger.of(context).showSnackBar((const SnackBar(content: Text('Item Carted'))));
+        } else if (state is CatalogProductItemCartActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar((const SnackBar(content: Text('Item Carted'))));
         }
       },
       builder: (context, state) {
@@ -56,12 +55,15 @@ class _CatalogState extends State<Catalog> {
                 ],
               ),
               body: ListView.builder(
-                itemCount: successState.products.length,
-                itemBuilder: (context, index) {
-                return ProductTileWidget(
-                    catalogBloc: catalogBloc,
-                    catalogDataModel: successState.products[index]);
-              }),
+                  itemCount: successState.products.length,
+                  itemBuilder: (context, index) {
+                    return Row(children: [
+                      ProductTileWidget(
+                        catalogBloc: catalogBloc,
+                        catalogDataModel: successState.products[index],
+                      ),
+                    ]);
+                  }),
             );
           case const (CatalogError):
             return const Scaffold(body: Center(child: Text('Error')));
