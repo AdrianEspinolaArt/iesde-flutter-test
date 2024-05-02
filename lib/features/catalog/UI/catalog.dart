@@ -12,14 +12,14 @@ class Catalog extends StatefulWidget {
 }
 
 class _CatalogState extends State<Catalog> {
+    final CatalogBloc catalogBloc = CatalogBloc();
   @override
   void initState() {
     catalogBloc.add(CatalogInitialEvent());
-
     super.initState();
   }
 
-  final CatalogBloc catalogBloc = CatalogBloc();
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CatalogBloc, CatalogState>(

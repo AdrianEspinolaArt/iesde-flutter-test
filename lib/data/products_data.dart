@@ -41,7 +41,7 @@ CatalogDataModel(
   id: '006',
   name: 'Caqui',
   price: 4.99,
-  description: 'Caquis brasileiros para lanches',
+  description: 'Caquis brasileiros',
   image: 'product_5.png',
   quantity: 1),
 CatalogDataModel(
@@ -69,7 +69,7 @@ CatalogDataModel(
   id: '010',
   name: 'Framboesa',
   price: 3.49,
-  description: 'Framboesas suculentas do Brasil',
+  description: 'Framboesas suculentas',
   image: 'product_9.png',
   quantity: 1),
   CatalogDataModel(

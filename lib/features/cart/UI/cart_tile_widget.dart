@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:processo_selecao_iesde/features/cart/bloc/bloc/cart_bloc.dart';
+import 'package:processo_selecao_iesde/features/cart/bloc/cart_bloc.dart';
 import 'package:processo_selecao_iesde/features/catalog/model/catalog_model.dart';
 
 class CartTileWidget extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:processo_selecao_iesde/features/cart/UI/cart_tile_widget.dart';
-import 'package:processo_selecao_iesde/features/cart/bloc/bloc/cart_bloc.dart';
+import 'package:processo_selecao_iesde/features/cart/bloc/cart_bloc.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});

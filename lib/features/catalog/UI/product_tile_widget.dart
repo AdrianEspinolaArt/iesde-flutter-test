@@ -19,17 +19,17 @@ class ProductTileWidget extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3), // changes position of shadow
-              ),
-            ],
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.black)),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(255, 58, 57, 57).withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -47,59 +47,62 @@ class ProductTileWidget extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Text(
-              catalogDataModel.name,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  catalogDataModel.name,
+                  style: const TextStyle(
+                      fontSize: 26, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "\$${catalogDataModel.price}",
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 10,
             ),
-            Text(catalogDataModel.description),
-            const SizedBox(
-              height: 20,
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text("\$${catalogDataModel.price}"),
-                Row(
-                  children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            catalogBloc.add(CatalogOffQuantityItemToCart(
-                              removeItem: catalogDataModel,
-                            ));
-                          },
-                          icon: const Icon(Icons.remove),
-                        ),
-                        Text(
-                          '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
-                          style: const TextStyle(fontSize: 16),
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            catalogBloc.add(CatalogAddQuantityItemToCart(
-                              addedItem: catalogDataModel,
-                            ));
-                          },
-                          icon: const Icon(Icons.add),
-                        ),
-                      ],
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          catalogBloc.add(CatalogCartButtonClickedEvent(
-                            clickedProduct: catalogDataModel,
-                          ));
-                        },
-                        icon: const Icon(Icons.shopping_bag_outlined)),
-                  ],
-                )
+                Text(catalogDataModel.description),
+                IconButton(
+                  onPressed: () {
+                    catalogBloc.add(CatalogOffQuantityItemToCart(
+                      removeItem: catalogDataModel,
+                    ));
+                  },
+                  icon: const Icon(Icons.remove),
+                ),
+                Text(
+                  '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
+                  style: const TextStyle(fontSize: 16),
+                ),
+                IconButton(
+                  onPressed: () {
+                    catalogBloc.add(CatalogAddQuantityItemToCart(
+                      addedItem: catalogDataModel,
+                    ));
+                  },
+                  icon: const Icon(Icons.add),
+                ),
+                IconButton(
+                    onPressed: () {
+                      catalogBloc.add(CatalogCartButtonClickedEvent(
+                        clickedProduct: catalogDataModel,
+                      ));
+                    },
+                    icon: const Icon(Icons.shopping_bag_outlined)),
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
