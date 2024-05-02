@@ -1,17 +1,35 @@
-// Copyright 2019 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 
-final appTheme = ThemeData(
-  colorSchemeSeed: Colors.yellow,
-  textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      fontFamily: 'Corben',
-      fontWeight: FontWeight.w700,
-      fontSize: 24,
-      color: Colors.black,
-    ),
-  ),
+const lightColorScheme = ColorScheme(
+  brightness: Brightness.light,
+  primary: Color(0xFF6750A4),
+  onPrimary: Color(0xFFFFFFFF),
+  primaryContainer: Color(0xFFE9DDFF),
+  onPrimaryContainer: Color(0xFF22005D),
+  secondary: Color(0xFF625B71),
+  onSecondary: Color(0xFFFFFFFF),
+  secondaryContainer: Color(0xFFE8DEF8),
+  onSecondaryContainer: Color(0xFF1E192B),
+  tertiary: Color(0xFF346A22),
+  onTertiary: Color(0xFFFFFFFF),
+  tertiaryContainer: Color(0xFFB5F39A),
+  onTertiaryContainer: Color(0xFF042100),
+  error: Color(0xFFBA1A1A),
+  errorContainer: Color(0xFFFFDAD6),
+  onError: Color(0xFFFFFFFF),
+  onErrorContainer: Color(0xFF410002),
+  background: Color(0xFFFFFBFF),
+  onBackground: Color(0xFF1C1B1E),
+  surface: Color(0xFFFFFBFF),
+  onSurface: Color(0xFF1C1B1E),
+  surfaceVariant: Color(0xFFE7E0EB),
+  onSurfaceVariant: Color(0xFF49454E),
+  outline: Color(0xFF7A757F),
+  onInverseSurface: Color(0xFFF4EFF4),
+  inverseSurface: Color(0xFF313033),
+  inversePrimary: Color(0xFFCFBCFF),
+  shadow: Color(0xFF000000),
+  surfaceTint: Color(0xFF6750A4),
+  outlineVariant: Color(0xFFCAC4CF),
+  scrim: Color(0xFF000000),
 );

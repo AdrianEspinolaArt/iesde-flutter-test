@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:processo_selecao_iesde/data/cart_itens.dart';
@@ -14,6 +13,7 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
     on<CatalogInitialEvent>(catalogInitialEvent);
     on<CatalogCartNavEvent>(catalogCartNavEvent);
     on<CatalogCartButtonClickedEvent>(catalogCartButtonClickedEvent);
+
   }
 
   FutureOr<void> catalogInitialEvent(
@@ -21,14 +21,7 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
     emit(CatalogLoadState());
     await Future.delayed(const Duration(seconds: 1));
     emit(CatalogLoadedSuccessState(
-        products: ProductsData.products
-            .map((e) => CatalogDataModel(
-                id: e['id'],
-                name: e['name'],
-                description: e['description'],
-                price: e['price'],
-                image: e['image']))
-            .toList()));
+        products: ProductsData.products, cartItems: const []));
   }
 
 
@@ -38,9 +31,9 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
   }
 
 
-  FutureOr<void> catalogCartButtonClickedEvent(
-      CatalogCartButtonClickedEvent event, Emitter<CatalogState> emit) {
-    cartItens.add(event.clickedProduct);
-    emit(CatalogProductItemCartActionState());
-  }
+FutureOr<void> catalogCartButtonClickedEvent(
+    CatalogCartButtonClickedEvent event, Emitter<CatalogState> emit) {
+  cartItens.add(event.clickedProduct);
+}
+
 }

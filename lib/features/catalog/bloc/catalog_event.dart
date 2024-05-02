@@ -13,3 +13,6 @@ class CatalogCartButtonClickedEvent extends CatalogEvent {
 }
 
 class CatalogCartNavEvent extends CatalogEvent {}
+
+
+
