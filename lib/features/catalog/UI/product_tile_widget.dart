@@ -7,10 +7,10 @@ class ProductTileWidget extends StatelessWidget {
   final CatalogBloc catalogBloc;
 
   const ProductTileWidget({
-    Key? key,
+    super.key,
     required this.catalogDataModel,
     required this.catalogBloc,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
