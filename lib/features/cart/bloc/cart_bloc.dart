@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:processo_selecao_iesde/data/cart_itens.dart';
-import 'package:processo_selecao_iesde/data/products_data.dart';
-import 'package:processo_selecao_iesde/features/catalog/bloc/catalog_bloc.dart';
 import 'package:processo_selecao_iesde/features/catalog/model/catalog_model.dart';
 
 part 'cart_event.dart';
@@ -10,21 +8,18 @@ part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc() : super(CartInitial()) {
-    on<CartInitialEvent>(cartInitialEvent); 
-    on<CartRemoveItemEvent>(_mapRemoveItemToState); // Adicionando manipulador de evento para CartRemoveItemEvent
-
+    on<CartInitialEvent>(cartInitialEvent);
+    on<CartRemoveItemEvent>(cartRemoveItemEvent);
   }
 
-
-  FutureOr<void> cartInitialEvent(CartInitialEvent event, Emitter<CartState> emit) {
+  FutureOr<void> cartInitialEvent(
+      CartInitialEvent event, Emitter<CartState> emit) {
     emit(CartSuccessState(cartItens: cartItens));
   }
-  
-FutureOr<void> _mapRemoveItemToState(CartRemoveItemEvent event, Emitter<CartState> emit) {
-  if (state is CartSuccessState) {
-    final updatedCartItems = List<CatalogDataModel>.from((state as CartSuccessState).cartItens);
-    updatedCartItems.remove(event.itemToRemove);
-    emit(CartSuccessState(cartItens: updatedCartItems));
+
+  FutureOr<void> cartRemoveItemEvent(
+      CartRemoveItemEvent event, Emitter<CartState> emit) {
+    cartItens.remove(event.itemToRemove);
+    emit(CartSuccessState(cartItens: cartItens));
   }
 }
-}  

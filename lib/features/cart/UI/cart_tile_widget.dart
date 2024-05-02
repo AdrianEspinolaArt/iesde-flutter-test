@@ -49,7 +49,7 @@ Widget build(BuildContext context) {
                       ),
                       IconButton(
                         onPressed: () {
-                          cartBloc.add(CartRemoveItemEvent(catalogDataModel));
+                        cartBloc.add(CartRemoveItemEvent(catalogDataModel));
                         },
                         icon: const Icon(Icons.close),
                       ),

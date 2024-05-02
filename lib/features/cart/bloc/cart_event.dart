@@ -10,7 +10,6 @@ class CartRemoveItemEvent extends CartEvent {
   final CatalogDataModel itemToRemove;
 
   CartRemoveItemEvent(this.itemToRemove);
+}
 
-  List<Object> get props => [itemToRemove];
-} 
  
