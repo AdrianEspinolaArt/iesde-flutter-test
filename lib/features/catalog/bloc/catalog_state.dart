@@ -22,6 +22,14 @@ class CatalogLoadedSuccessState extends CatalogState{
 
 class CatalogError extends CatalogState{}
 
+class CatalogUpdatedState extends CatalogState {
+  final List<CatalogDataModel> products;
+
+  CatalogUpdatedState(this.products);
+
+  List<Object> get props => [products];
+}
+
 class CatalogNavToCartAction extends CatalogActionState{}
 
 class CatalogProductItemCartActionState extends CatalogActionState{}

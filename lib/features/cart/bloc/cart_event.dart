@@ -13,3 +13,4 @@ class CartRemoveItemEvent extends CartEvent {
 
   List<Object> get props => [itemToRemove];
 } 
+ 
