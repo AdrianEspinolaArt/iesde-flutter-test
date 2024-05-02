@@ -12,4 +12,4 @@ class CartRemoveItemEvent extends CartEvent {
   CartRemoveItemEvent(this.itemToRemove);
 }
 
- 
+  

@@ -22,4 +22,13 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     cartItens.remove(event.itemToRemove);
     emit(CartSuccessState(cartItens: cartItens));
   }
+
+  double calcularTotal(List<CatalogDataModel> cartItens) {
+  double total = 0.0;
+  for (var item in cartItens) {
+    total += item.price * item.quantity;
+  }
+  return total;
 }
+}
+ 
