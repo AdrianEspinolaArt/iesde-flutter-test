@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:processo_selecao_iesde/common/theme.dart';
 import 'package:processo_selecao_iesde/features/cart/UI/cart_tile_widget.dart';
 import 'package:processo_selecao_iesde/features/cart/bloc/cart_bloc.dart';
 
@@ -48,24 +49,31 @@ class Cart extends StatefulWidget {
       final successState = state as CartSuccessState;
       final total = cartBloc.calcularTotal(successState.cartItens);
       return Column(
+        
         children: [
           Container(
+            decoration: BoxDecoration(
+              color:lightColorScheme.primary,
+            ),    
             padding: const EdgeInsets.all(10),
             height: 80,
             width: double.maxFinite,
             child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Text(
-                    'Total:', // Formatando para exibir 2 casas decimais
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '\$${total.toStringAsFixed(2)}', // Formatando para exibir 2 casas decimais
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Total:', // Formatando para exibir 2 casas decimais
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '\$${total.toStringAsFixed(2)}', // Formatando para exibir 2 casas decimais
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
