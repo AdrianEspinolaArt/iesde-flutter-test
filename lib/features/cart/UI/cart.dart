@@ -22,7 +22,12 @@ class Cart extends StatefulWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart', style: Theme.of(context).textTheme.displayMedium),
+        title: const Text('Cart', 
+        style: TextStyle(
+          fontSize: 40,
+        ) 
+        
+        ),
         actions: [
           IconButton(
             onPressed: (){

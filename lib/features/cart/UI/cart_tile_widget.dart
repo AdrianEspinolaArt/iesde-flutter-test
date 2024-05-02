@@ -11,8 +11,15 @@ class CartTileWidget extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
   return Container(
-    margin: const EdgeInsets.all(10),
     padding: const EdgeInsets.all(10),
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      border: Border(
+        bottom: BorderSide(
+          color: Colors.black
+        )
+      )
+      ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -92,10 +99,6 @@ Widget build(BuildContext context) {
           ],
         ),
         const SizedBox(height: 10),
-        const Divider( // Linha separadora
-          color: Color.fromARGB(255, 114, 114, 114),
-          thickness: 1,
-        ),
       ],
     ),
   );
