@@ -25,9 +25,3 @@ class CatalogError extends CatalogState{}
 class CatalogNavToCartAction extends CatalogActionState{}
 
 class CatalogProductItemCartActionState extends CatalogActionState{}
-
-class CartState extends CatalogState {
-  final List<CatalogDataModel> cartItems;
-  copyWith({required int quantity}) {}
-  CartState({required this.cartItems});
-}

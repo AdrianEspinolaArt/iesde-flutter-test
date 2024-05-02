@@ -72,11 +72,7 @@ class ProductTileWidget extends StatelessWidget {
               children: [
                 Text(catalogDataModel.description),
                 IconButton(
-                  onPressed: () {
-                    catalogBloc.add(CatalogOffQuantityItemToCart(
-                      removeItem: catalogDataModel,
-                    ));
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.remove),
                 ),
                 Text(
@@ -84,11 +80,7 @@ class ProductTileWidget extends StatelessWidget {
                   style: const TextStyle(fontSize: 16),
                 ),
                 IconButton(
-                  onPressed: () {
-                    catalogBloc.add(CatalogAddQuantityItemToCart(
-                      addedItem: catalogDataModel,
-                    ));
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.add),
                 ),
                 IconButton(

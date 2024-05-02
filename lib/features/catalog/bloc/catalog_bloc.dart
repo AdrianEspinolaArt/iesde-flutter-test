@@ -14,8 +14,6 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
     on<CatalogInitialEvent>(catalogInitialEvent);
     on<CatalogCartNavEvent>(catalogCartNavEvent);
     on<CatalogCartButtonClickedEvent>(catalogCartButtonClickedEvent);
-    on<CatalogAddQuantityItemToCart>(catalogAddQuantityItemToCart);
-    on<CatalogOffQuantityItemToCart>(catalogOffQuantityItemToCart);
 
   }
 
@@ -39,34 +37,4 @@ FutureOr<void> catalogCartButtonClickedEvent(
   cartItens.add(event.clickedProduct);
 }
 
-FutureOr<void> catalogAddQuantityItemToCart(
-    CatalogAddQuantityItemToCart event, Emitter<CatalogState> emit) {
-    final index = cartItens.indexWhere((item) => item.id == event.addedItem.id);
-
-    if (index != -1) {
-    final updatedItem = cartItens[index].copyWith(quantity: cartItens[index].quantity + 1);
-    cartItens[index] = updatedItem;
-    } else {
-    cartItens.add(event.addedItem.copyWith(quantity: 1));
-    }
-
-    // Emitir um novo estado com a lista atualizada de produtos e itens no carrinho
-    emit(CatalogLoadedSuccessState(products: ProductsData.products, cartItems: cartItens));
-}
-
-FutureOr<void> catalogOffQuantityItemToCart(
-  CatalogOffQuantityItemToCart event, Emitter<CatalogState> emit) {
-  final index = cartItens.indexWhere((item) => item.id == event.removeItem.id);
-  
-  if (index != -1) {
-    final updatedItem = cartItens[index].copyWith(quantity: cartItens[index].quantity - 1);
-    cartItens[index] = updatedItem;
-    
-    if (updatedItem.quantity == 0) {
-      cartItens.removeAt(index);
-    }
-  }
-  
-  emit(CatalogLoadedSuccessState(products: ProductsData.products, cartItems: cartItens)); // Emitir um novo estado com a lista atualizada de produtos e itens no carrinho
-}
 }

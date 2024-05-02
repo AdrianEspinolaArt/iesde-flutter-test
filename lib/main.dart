@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:processo_selecao_iesde/Routes/routes.dart';
-import 'package:processo_selecao_iesde/features/catalog/bloc/catalog_bloc.dart';
 import 'package:processo_selecao_iesde/features/home/bloc/login_bloc.dart';
 import 'package:provider/provider.dart';
 
@@ -15,11 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authenticationBloc = AuthenticationBloc();
-final catalogBloc = CatalogBloc(); // Instancie o CatalogBloc
     return MultiProvider(
       providers: [
             BlocProvider<AuthenticationBloc>.value(value: authenticationBloc),
-            BlocProvider<CatalogBloc>.value(value: catalogBloc), 
           ],
       child: MaterialApp.router(
         title: 'Flutter Demo',
