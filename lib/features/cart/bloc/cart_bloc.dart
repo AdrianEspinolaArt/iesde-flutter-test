@@ -38,15 +38,10 @@ FutureOr<void> plusItemInCart(
   final updatedProduct = event.plusItem.copyWith(
     quantity: event.plusItem.quantity + 1,
   );
-
-  // Encontrar o índice do item na lista
   final index = state.cartItens.indexWhere((item) => item.id == updatedProduct.id);
-
   if (index != -1) {
-    // Atualizar a quantidade do item na lista
     state.cartItens[index] = updatedProduct;
   }
-
   emit(CartSuccessState(
     cartItens: state.cartItens,
   ));
@@ -58,16 +53,11 @@ FutureOr<void> offItemInCart(
     final updatedProduct = event.offItem.copyWith(
       quantity: event.offItem.quantity - 1,
     );
-
-    // Encontrar o índice do item na lista
     final index = state.cartItens.indexWhere((item) => item.id == updatedProduct.id);
-
     if (index != -1) {
-      // Atualizar a quantidade do item na lista
       state.cartItens[index] = updatedProduct;
     }
   }
-
   emit(CartSuccessState(
     cartItens: state.cartItens,
   ));
