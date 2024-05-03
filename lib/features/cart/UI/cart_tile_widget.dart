@@ -78,10 +78,10 @@ Widget build(BuildContext context) {
                             },
                             icon: const Icon(Icons.remove),
                           ),
-                          const Text(
-                            '1', // Aqui você pode colocar a quantidade inicial ou vinculá-la a um contador
-                            style: TextStyle(fontSize: 16),
-                          ),
+                          Text(
+                  '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
+                  style: const TextStyle(fontSize: 16),
+                ),
                           IconButton(
                             onPressed: () {
                               // Aumentar a quantidade
