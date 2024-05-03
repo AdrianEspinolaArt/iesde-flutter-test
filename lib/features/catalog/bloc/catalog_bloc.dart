@@ -13,6 +13,8 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
     on<CatalogInitialEvent>(catalogInitialEvent);
     on<CatalogCartNavEvent>(catalogCartNavEvent);
     on<CatalogCartButtonClickedEvent>(catalogCartButtonClickedEvent);
+    on<AddItemToCart>(addItemToCart);
+    on<RemoveItemToCart>(removeItemToCart);
 
   }
 
@@ -33,7 +35,42 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
 
 FutureOr<void> catalogCartButtonClickedEvent(
     CatalogCartButtonClickedEvent event, Emitter<CatalogState> emit) {
-  cartItens.add(event.clickedProduct);
+    cartItens.add(event.clickedProduct);
 }
 
+FutureOr<void> addItemToCart(
+    AddItemToCart event, Emitter<CatalogState> emit) {
+  final updatedProduct = event.addedItem.copyWith(
+    quantity: event.addedItem.quantity + 1,
+  );
+  emit(CatalogLoadedSuccessState(
+    products: (state as CatalogLoadedSuccessState).products.map((product) {
+      if (product.id == updatedProduct.id) {
+        return updatedProduct;
+      } else {
+        return product;
+      }
+    }).toList(),
+    cartItems: cartItens + [updatedProduct],
+  ));
 }
+
+FutureOr<void> removeItemToCart(
+    RemoveItemToCart event, Emitter<CatalogState> emit) {
+  final updatedProduct = event.removeItem.copyWith(
+    quantity: event.removeItem.quantity - 1,
+  );
+  emit(CatalogLoadedSuccessState(
+    products: (state as CatalogLoadedSuccessState).products.map((product) {
+      if (product.id == updatedProduct.id) {
+        return updatedProduct;
+      } else {
+        return product;
+      }
+    }).toList(),
+    cartItems: cartItens + [updatedProduct],
+  ));
+}
+}
+
+

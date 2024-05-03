@@ -72,23 +72,27 @@ Widget build(BuildContext context) {
                       Row(
                         children: [
                           IconButton(
-                            onPressed: () {
-                              // Reduzir a quantidade
-                              // Implemente sua lógica aqui
-                            },
-                            icon: const Icon(Icons.remove),
-                          ),
-                          const Text(
-                            '1', // Aqui você pode colocar a quantidade inicial ou vinculá-la a um contador
-                            style: TextStyle(fontSize: 16),
-                          ),
+                  onPressed: () {
+                    // Lógica para remover a quantidade do item
+                    cartBloc.add(OffItemInCart(
+                      offItem: catalogDataModel.copyWith(),
+                    ));
+                  },
+                  icon: const Icon(Icons.remove),
+                ),
+                          Text(
+                  '${catalogDataModel.quantity}', // Exibir a quantidade atual do item
+                  style: const TextStyle(fontSize: 16),
+                ),
                           IconButton(
-                            onPressed: () {
-                              // Aumentar a quantidade
-                              // Implemente sua lógica aqui
-                            },
-                            icon: const Icon(Icons.add),
-                          ),
+                  onPressed: () {
+                    // Lógica para adicionar a quantidade do item
+                    cartBloc.add(PlusItemInCart(
+                      plusItem: catalogDataModel.copyWith(),
+                    ));
+                  },
+                  icon: const Icon(Icons.add),
+                ),
                         ],
                       ),
                     ],

@@ -12,4 +12,16 @@ class CartRemoveItemEvent extends CartEvent {
   CartRemoveItemEvent(this.itemToRemove);
 }
 
-  
+class PlusItemInCart extends CartEvent{
+        final CatalogDataModel plusItem;
+
+  PlusItemInCart({
+    required this.plusItem});
+}
+
+class OffItemInCart extends CartEvent{
+      final CatalogDataModel offItem;
+
+  OffItemInCart({
+    required this.offItem});
+}

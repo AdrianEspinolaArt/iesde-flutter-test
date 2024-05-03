@@ -14,5 +14,19 @@ class CatalogCartButtonClickedEvent extends CatalogEvent {
 
 class CatalogCartNavEvent extends CatalogEvent {}
 
+class AddItemToCart extends CatalogEvent{
+  final CatalogDataModel addedItem;
 
+  AddItemToCart({
+    required this.addedItem});
+  
+}
+
+class RemoveItemToCart extends CatalogEvent{
+  final CatalogDataModel removeItem;
+
+  RemoveItemToCart({
+    required this.removeItem});
+
+}
 

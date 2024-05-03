@@ -72,7 +72,12 @@ class ProductTileWidget extends StatelessWidget {
               children: [
                 Text(catalogDataModel.description),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Lógica para remover a quantidade do item
+                    catalogBloc.add(RemoveItemToCart(
+                      removeItem: catalogDataModel.copyWith(),
+                    ));
+                  },
                   icon: const Icon(Icons.remove),
                 ),
                 Text(
@@ -80,16 +85,23 @@ class ProductTileWidget extends StatelessWidget {
                   style: const TextStyle(fontSize: 16),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Lógica para adicionar a quantidade do item
+                    catalogBloc.add(AddItemToCart(
+                      addedItem: catalogDataModel.copyWith(),
+                    ));
+                  },
                   icon: const Icon(Icons.add),
                 ),
                 IconButton(
-                    onPressed: () {
-                      catalogBloc.add(CatalogCartButtonClickedEvent(
-                        clickedProduct: catalogDataModel,
-                      ));
-                    },
-                    icon: const Icon(Icons.shopping_bag_outlined)),
+                  onPressed: () {
+                    // Lógica para adicionar o item ao carrinho
+                    catalogBloc.add(CatalogCartButtonClickedEvent(
+                      clickedProduct: catalogDataModel,
+                    ));
+                  },
+                  icon: const Icon(Icons.shopping_bag_outlined),
+                ),
               ],
             ),
             const SizedBox(

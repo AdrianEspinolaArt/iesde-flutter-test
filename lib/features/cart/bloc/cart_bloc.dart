@@ -10,6 +10,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc() : super(CartInitial()) {
     on<CartInitialEvent>(cartInitialEvent);
     on<CartRemoveItemEvent>(cartRemoveItemEvent);
+    on<PlusItemInCart>(plusItemInCart);
+    on<OffItemInCart>(offItemInCart);
   }
 
   FutureOr<void> cartInitialEvent(
@@ -30,5 +32,36 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   }
   return total;
 }
+
+FutureOr<void> plusItemInCart(
+  PlusItemInCart event, Emitter<CartState> emit) {
+  final updatedProduct = event.plusItem.copyWith(
+    quantity: event.plusItem.quantity + 1,
+  );
+  final index = state.cartItens.indexWhere((item) => item.id == updatedProduct.id);
+  if (index != -1) {
+    state.cartItens[index] = updatedProduct;
+  }
+  emit(CartSuccessState(
+    cartItens: state.cartItens,
+  ));
+}
+
+FutureOr<void> offItemInCart(
+  OffItemInCart event, Emitter<CartState> emit) {
+  if (event.offItem.quantity > 1) {
+    final updatedProduct = event.offItem.copyWith(
+      quantity: event.offItem.quantity - 1,
+    );
+    final index = state.cartItens.indexWhere((item) => item.id == updatedProduct.id);
+    if (index != -1) {
+      state.cartItens[index] = updatedProduct;
+    }
+  }
+  emit(CartSuccessState(
+    cartItens: state.cartItens,
+  ));
+}
+
 }
  
